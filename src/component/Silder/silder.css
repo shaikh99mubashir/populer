@@ -1,0 +1,30 @@
+.each-slide > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    height:250px;
+    width: '100%';
+  }
+  .ban{
+    width: '100%';
+    height: '28vw';
+    background-size: '100% 100%';
+    background-position: 'center';
+  }
+  /* .each-slide span {
+    padding: 20px;
+    font-size: 20px;
+    background: #efefef;
+    text-align: center;
+  } */
+  
+
+  @media only screen and (min-width: 320px) and (max-width: 480px) {
+    .each-slide > div {
+      height: auto;
+    }
+    /* .Flickity{
+      height: 250px;
+    } */
+  }

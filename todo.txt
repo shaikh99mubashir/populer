@@ -1,0 +1,21 @@
+popular-admin
+{/*576 to  789   */}
+
+const [IsLoading, setIsLoading] = useState(false);
+  useEffect(() => {
+    setIsLoading(true)
+    setTimeout(() => {
+    setIsLoading(false)
+    }, 500);
+  },[])
+import ClipLoader from "react-spinners/ClipLoader";
+{
+    
+        IsLoading ? 
+         <div className="load-center">
+        <ClipLoader
+        color={'red'}
+        loading = {IsLoading}
+        size={100} /> </div>
+         :
+        (

@@ -1,0 +1,89 @@
+/* .Mainsection{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+} */
+/* .Leftsection{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 40px 0px;
+    flex-wrap: nowrap !important;
+} */
+/* .Rightsection{
+    flex-direction: row-reverse;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 40px 0px;
+    flex-wrap: nowrap !important;
+
+} */
+/* .ImgSection{
+    display: flex;
+    flex: 1 1 60%;
+    flex-direction: column;
+    max-width : 1000px;
+} */
+/* .img2{
+    width: 100% ;
+    object-fit: cover ;
+    height: 300px;
+   } */
+.DetailsSection{
+    flex: 1 1 40%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 40px;
+    max-width:  700px;
+}
+.TitleText{
+    color: red;
+    font-size: 2.2rem;
+    font-weight: bolder;
+}
+.SubTitleText{
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+.ParaText{
+    color: #999999;
+    font-size: 1rem;
+}
+.FloatingImgLeft{
+    object-fit: cover;
+    width: 130px;
+    margin: 0px 40px 0px 0px;
+}
+.FloatingImgRight{
+    object-fit: cover;
+    width: 80px;
+    margin: 0px 0px 0px 50px;
+}
+@media only screen and (max-width: 786px) {
+ 
+   .Leftsection{
+    flex-wrap: wrap !important;
+
+            flex-basis: 100%;
+     
+   }
+   .Rightsection{
+    flex-wrap: wrap !important;
+
+            flex-basis: 100%;
+     
+   }
+   .DetailsSection{
+    margin: auto;
+   }
+   .ParaText{
+    padding: 0px !important;
+   }
+   .FloatingImgLeft{
+    display: none;
+   }
+   .FloatingImgRight{
+    display: none;
+   }
+}

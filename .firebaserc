@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "staging": "popular-822cd",
+    "default": "popular-822cd"
+  },
+  "targets": {}
+}

@@ -1,0 +1,54 @@
+.TitleText{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    text-align: center;
+    margin: 10px 0px;
+    color: #fff;
+}
+
+.exploreStyle{
+    background-image: url("../../assets/logoBackground.jpg");
+    /* background-size: contain; */
+    background-repeat: round;
+    border-radius: 50px;
+    margin: 50px;
+    /* padding: 20px 0; */
+    /* height: 365px; */
+} 
+/* .exploreStyle img{
+    width: 248px;
+    height: 188px;
+} */
+
+span{
+    color: red;
+}
+
+.sliderScreen{
+    
+    /* margin-left: 50px */
+    
+}
+
+
+.slick-slide img {
+
+    display: unset !important;
+
+
+}
+
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .exploreStyle{
+        margin: 50px 0px;
+        border-radius: unset;
+    }
+    .TitleText{
+        color: black;
+        padding-top: 15px;
+    }
+    .exploreStyle img{
+        /* width: 100%; */
+    }
+}
