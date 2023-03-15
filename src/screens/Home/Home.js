@@ -26,6 +26,15 @@ import PopularHighlight from "../../component/PopularHighlight";
 import FeaturesSection from "../../component/FeaturesSection";
 import Slider from "react-slick";
 import JuiceBanner from "../../component/arrivalSilder/JuiceBanner";
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+// import 'swiper/css/scrollbar';
 
 export default function Home({
   itemSearch,
@@ -46,6 +55,7 @@ export default function Home({
   const [lastFDocCat, setLastFDocCat] = useState([]);
   const [isFEmptyCat, setIsFEmptyCat] = useState(false);
   const [isFLoadCat, setIsFLoadCat] = useState(false);
+
 
   // useEffect(async () => {
   //   const collectionRef = collection(db, "MainCategory");
@@ -157,6 +167,7 @@ export default function Home({
     dots: true,
     infinite: true,
     slidesToShow: 9,
+
     slidesToScroll: 9,
     autoplay: false,
     responsive: [
@@ -188,8 +199,8 @@ export default function Home({
           slidesToShow: 1,
           slidesToScroll: 1,
           dots: false,
-          // nextArrow: <SampleNextArrow />,
-          // prevArrow: <SamplePrevArrow />,
+          nextArrow: <SampleNextArrow />,
+          prevArrow: <SamplePrevArrow />,
         },
       },
     ],
@@ -234,27 +245,36 @@ export default function Home({
               <main id="main-container ">
                 <div className="main">
                   <div className="justify-content-md-center" style={{ width: "100%" }}>
-                    {/* <img className="estore" src={estore} alt="estore" /> */}
                     <div className="categoryStyle">
                       <h1 className="heading-cat">Categories</h1>
                       <div className="category categorybackStyle" style={{ marginBottom: "50px" }}>
-                        {/* <div className="row1"> */}
-                        {/* <Silder>
-          {banner.map((item, i) => (
-            <img
-              src={item.image && item.image}
-              key={item.id}
-              style={{ width: "100%", height: "28vw" }}
-              alt="juices"
-            />
-          ))}
-        </Silder> */}
-
-                        <Slider {...crouselSettings} >
+                        <Swiper
+                          modules={[Navigation, A11y]}
+                          spaceBetween={50}
+                          slidesPerView={6}
+                          navigation
+                          breakpoints={{
+                            "@0.00": {
+                              slidesPerView: 2,
+                              spaceBetween: 10,
+                            },
+                            "@0.75": {
+                              slidesPerView: 2,
+                              spaceBetween: 20,
+                            },
+                            "@1.00": {
+                              slidesPerView: 3,
+                              spaceBetween: 40,
+                            },
+                            "@1.50": {
+                              slidesPerView: 6,
+                              spaceBetween: 50,
+                            },
+                          }}
+                        >
                           {categoryD.map((data, ind) => (
-
-                            <div
-                              className="card1"
+                            <SwiperSlide><div
+                              className="categoryCategoriesCard"
                               key={ind}
                               onClick={() => submit(data)}
                               style={{ cursor: "pointer" }}
@@ -268,13 +288,35 @@ export default function Home({
                               >
                                 <img width="70%" src={data.image} alt="image" />
                                 <div>
-                                  <div className="name1">{data.category}</div>
-                                  <div className="subname">{data.description}</div>
+                                  <div className="categoryCategoriesName">{data.category}</div>
+                                </div>
+                              </div>
+                            </div></SwiperSlide>
+                          ))}
+                        </Swiper>
+                        {/* <Slider {...crouselSettings} >
+                          {categoryD.map((data, ind) => (
+                            <div
+                              className="categoryCategoriesCard"
+                              key={ind}
+                              onClick={() => submit(data)}
+                              style={{ cursor: "pointer" }}
+                            >
+                              <div
+                                style={{
+                                  display: "flex",
+                                  flexDirection: "column",
+                                  alignItems: "center",
+                                }}
+                              >
+                                <img width="70%" src={data.image} alt="image" />
+                                <div>
+                                  <div className="categoryCategoriesName">{data.category}</div>
                                 </div>
                               </div>
                             </div>
                           ))}
-                        </Slider>
+                        </Slider> */}
                       </div>
 
 

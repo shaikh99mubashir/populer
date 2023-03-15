@@ -7,23 +7,51 @@ import featureImg4 from '../../assets/features_icons/4.png'
 import './style.css';
 const FeaturesSection = () => {
   return (
-    <div className='MainBody'>
-        <div className='FeatureItem'>
-            <img className='img1' src={featureImg4} alt="featureImg4" />
-            <span className='TitleText1'>Great Value</span>
+    // <div className='MainBody'>
+    //     <div className='FeatureItem'>
+    //         <img className='img1' src={featureImg4} alt="featureImg4" />
+    //         <span className='TitleText1'>Great Value</span>
+    //     </div>
+    //     <div className='FeatureItem'>
+    //         <img className='img1' src={featureImg1} alt="featureImg1" />
+    //         <span className='TitleText1'>Safe Payment</span>
+    //     </div>
+    //     <div className='FeatureItem'>
+    //         <img className='img1' src={featureImg3} alt="featureImg3" />
+    //         <span className='TitleText1'>Shop Confidence</span>
+    //     </div>
+    //     <div className='FeatureItem'>
+    //         <img className='img1' src={featureImg2} alt="featureImg2" />
+    //         <span className='TitleText1'>24/7 Help Center</span>
+    //     </div>
+    // </div>
+    <div class="container" style={{padding: "40px 0px"}}>
+    <div class="row">
+      <div class="col">
+      <div className='FeatureItem'>
+          <img className='img1' src={featureImg4} alt="featureImg4" />
+           <span className='TitleText1'>Great Value</span>
         </div>
-        <div className='FeatureItem'>
-            <img className='img1' src={featureImg1} alt="featureImg1" />
-            <span className='TitleText1'>Safe Payment</span>
+      </div>
+      <div class="col">
+      <div className='FeatureItem'>
+           <img className='img1' src={featureImg1} alt="featureImg1" />
+         <span className='TitleText1'>Safe Payment</span>
         </div>
-        <div className='FeatureItem'>
-            <img className='img1' src={featureImg3} alt="featureImg3" />
-            <span className='TitleText1'>Shop Confidence</span>
+      </div>
+      <div class="col">
+      <div className='FeatureItem'>
+        <img className='img1' src={featureImg3} alt="featureImg3" />
+          <span className='TitleText1'>Shop Confidence</span>
+      </div>
+      </div>
+      <div class="col">
+      <div className='FeatureItem'>
+           <img className='img1' src={featureImg2} alt="featureImg2" />
+           <span className='TitleText1'>24/7 Help Center</span>
         </div>
-        <div className='FeatureItem'>
-            <img className='img1' src={featureImg2} alt="featureImg2" />
-            <span className='TitleText1'>24/7 Help Center</span>
-        </div>
+      </div>
+    </div>
     </div>
   )
 }

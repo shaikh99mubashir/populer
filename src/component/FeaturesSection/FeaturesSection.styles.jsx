@@ -29,4 +29,5 @@ export const FeatureItem = styled(Box)(()=>({
 export const TitleText = styled(Typography)(()=>({
     fontSize: '1.2rem',
     color: '#606060'
+    ,fontFamily: "Gill Sans"
 }))

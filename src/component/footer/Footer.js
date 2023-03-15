@@ -25,25 +25,11 @@ import { useSelector } from "react-redux";
 // import Paper from '@mui/material/Paper';
 export default function Footer() {
   const history = useHistory()
-
   const categoryD = useSelector((state) => state.category.initialState);
   useEffect(() => {
-
   }, [categoryD])
-  console.log('categoryD', categoryD);
   return (
-    // <Box
-    //   sx={{
-    //     display: 'flex',
-    //     flexWrap: 'wrap',
-    //     '& > :not(style)': {
-    //       m: 1,
-    //       width: 128,
-    //       height: 128,
-    //     },
-    //   }}
-    // >
-    //   <Paper elevation={0} >
+
 
     <div className="containerfoot">
       <FeaturesSection />
@@ -54,9 +40,11 @@ export default function Footer() {
           // style={{ flexDirection: "column", display: "flex", justifyContent: 'center', margin: '0% 10% 0% -8%' }}
           >
             <img width='100%' src={logo} alt="logo" style={{ width: '250px' }} />
-            <Stack direction="row" spacing={1}>
+            <Stack direction="row" spacing={1} className="mui" style={{ textAlign: "-webkit-center" }}>
               <IconButton aria-label="delete" color="primary">
-                <img src={fbIcon} width="30px" height="30px" />
+                <a href="https://www.facebook.com/populargrouppgi/" target='blank'>
+                  <img src={fbIcon} width="30px" height="30px" />
+                </a>
               </IconButton>
               <IconButton aria-label="delete" color="info">
                 <img src={twitterIcon} width="30px" height="30px" />
@@ -86,42 +74,38 @@ export default function Footer() {
 
           </div> */}
           <div className='flink'>
-            <h2>Company</h2>
-            <ListItemButton>
-              {/* <ListItemText
-              primaryTypographyProps={{
-                width: "100%",
-                lineHeight: "10px",
-              }}
-              primary="About Us"
-            /> */}
-              About Us
-            </ListItemButton>
-            <ListItemButton>
-              {/* <ListItemText
+            <h2>Useful Links</h2>
+            <Link to='/' style={{ textDecoration: 'none', color: 'white' }}>
+              <ListItemButton>
+                Home
+              </ListItemButton>
+            </Link>
+            <Link to='Aboutus' style={{ textDecoration: 'none', color: 'white' }}>
+              <ListItemButton>
+                About Us
+              </ListItemButton>
+            </Link>
+            <Link to='Blogs' style={{ textDecoration: 'none', color: 'white' }}>
+              <ListItemButton>
+                Blogs
+              </ListItemButton>
+            </Link>
+            <Link to='Contact' style={{ textDecoration: 'none', color: 'white' }}>
+              <ListItemButton>
+                {/* <ListItemText
               primaryTypographyProps={{
                 width: "100%",
                 lineHeight: "10px",
               }}
               primary="Contact"
             /> */}
-              Contact
-            </ListItemButton>
+                Contact
+              </ListItemButton>
+            </Link>
           </div>
           <div className='flink'>
             <h2>Business</h2>
-            <ListItemButton>
-              {/* <ListItemText
-              primaryTypographyProps={{
-                width: "100%",
-                lineHeight: "10px",
-              }}
-              primary="Checkout"
-            /> */}
-              <Link style={{ color: "white", textDecoration: "none" }} to="/CheckOut">
-                Checkout
-              </Link>
-            </ListItemButton>
+
             <ListItemButton>
               {/* <ListItemText
               primaryTypographyProps={{
@@ -151,11 +135,12 @@ export default function Footer() {
       }
 
       <Divider />
-      <h4 style={{
+      <h4 id="footer" style={{
         background: "white",
         color: "black",
         margin: "0px",
         paddingTop: "10px",
+        fontSize: "20px",
         paddingBottom: "10px"
       }}>©Copyright Yes!TechDay 2022 . All Rights Reserved</h4>
       {/* <h4>© 2021 DeskWorkSolution. All Rights Reserved</h4> */}

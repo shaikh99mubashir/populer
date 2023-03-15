@@ -52,7 +52,7 @@ function TabPanel(props) {
     >
       {value === index && (
         <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
+          <Typography sx={{fontFamily: "Gill Sans"}}>{children}</Typography>
         </Box>
       )}
     </div>
@@ -290,12 +290,12 @@ function Payment() {
                       <h1 style={{ textAlign: "left", marginLeft: "1%" }}>Confirm Billing Address</h1>
 
                       <div style={{ display: 'flex', flexDirection: 'column', justifyContent: "start", marginLeft: "2%", textAlign: 'start'}}>
-                        <h5><span style={{fontSize: '1rem'}}>Name : </span> <span style={{ fontWeight: 'lighter', fontSize: "18px" }}>{location.state.address.fullName}</span></h5>
-                        <h5><span style={{fontSize: '1rem'}}>Contact No : </span> <span style={{ fontWeight: 'lighter', fontSize: "18px" }}>{location.state.address.phone}</span></h5>
-                        <h5><span style={{fontSize: '1rem'}}>City : </span> <span style={{ fontWeight: 'lighter', fontSize: "18px" }}>{location.state.address.city}</span></h5>
+                        <h5><span style={{fontSize: '1rem',fontFamily: "Gill Sans"}}>Name : </span> <span style={{ fontWeight: 'lighter', fontSize: "18px",fontFamily: "Gill Sans" }}>{location.state.address.fullName}</span></h5>
+                        <h5><span style={{fontSize: '1rem',fontFamily: "Gill Sans"}}>Contact No : </span> <span style={{ fontWeight: 'lighter', fontSize: "18px",fontFamily: "Gill Sans" }}>{location.state.address.phone}</span></h5>
+                        <h5><span style={{fontSize: '1rem',fontFamily: "Gill Sans"}}>City : </span> <span style={{ fontWeight: 'lighter', fontSize: "18px",fontFamily: "Gill Sans" }}>{location.state.address.city}</span></h5>
                       </div>
-                      <div style={{ display: 'flex', flexDirection: 'row', justifyContent: "flex-start", marginLeft: "2%" }}>
-                        <h5><span style={{fontSize: '1rem'}}>Address :</span> <span style={{ fontWeight: 'lighter', fontSize: "18px" }}>{location.state.address.address}</span></h5>
+                      <div style={{ display: 'flex', flexDirection: 'row', justifyContent: "flex-start", marginLeft: "2%",fontFamily: "Gill Sans" }}>
+                        <h5><span style={{fontSize: '1rem',fontFamily: "Gill Sans"}}>Address :</span> <span style={{ fontWeight: 'lighter', fontSize: "18px",fontFamily: "Gill Sans" }}>{location.state.address.address}</span></h5>
                       </div>
 
                       {/* </TabPanel> */}

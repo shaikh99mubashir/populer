@@ -48,17 +48,18 @@ export const DetailsSection = styled(Box)(({theme})=>({
 export const TitleText = styled(Typography)(()=>({
     color: 'red',
     fontSize: '2.2rem',
-    fontWeight: 'bolder',
+    fontWeight: 'bolder'
+    ,fontFamily: "Gill Sans"
 }))
 
 export const SubTitleText = styled(Typography)(()=>({
     fontSize: '1.6rem',
-    fontWeight: '600'
+    fontWeight: '600',fontFamily: "Gill Sans"
 }))
 
 export const ParaText = styled(Typography)(({theme})=>({
     color: '#999999',
-    fontSize: '1rem',
+    fontSize: '1rem',fontFamily: "Gill Sans",
     [theme.breakpoints.down('sm')]: {
         padding: '0px !important'
     }

@@ -1,65 +1,61 @@
-.nav{
-    box-shadow: none!important;
-    /* background-color: red !important; */
-    margin-top: 1%!important;
-    padding: 0% !important;
-    color: white!important;
-    /* font-weight: bold !important; */
+.nav {
+  box-shadow: none !important;
+  /* background-color: red !important; */
+  margin-top: 1% !important;
+  padding: 0% !important;
+  color: white !important;
+  /* font-weight: bold !important; */
 }
 
-.container{
-    width: 100%;
-    align-self: center !important;
+.container {
+  width: 100%;
+  align-self: center !important;
 }
-
 
 #none {
-    display: none;
-    /* position: absolute; */
-    /* left: 0; */
-    cursor: pointer;
+  display: none;
+  /* position: absolute; */
+  /* left: 0; */
+  cursor: pointer;
 }
 
-.NavBtn{
-    /* background-color: black !important; */
-    background:#000 !important;
-    color: white!important;
-    font-weight: bold !important;
-    border-radius: 30px 0px 0px 0px !important;
-    padding: 7px !important;
+.NavBtn {
+  /* background-color: black !important; */
+  background: #000 !important;
+  color: white !important;
+  font-weight: bold !important;
+  border-radius: 30px 0px 0px 0px !important;
+  padding: 7px !important;
 }
-
 
 @media (max-width: 700px) {
-    #none {
-        display: inline-block;
-        /* margin-top: 30px; */
-    }
-    .container{
-        width: 100%;
-        align-self: center !important;
-    }
+  #none {
+    width: 66px;
+    display: inline-block;
+    /* margin-top: 30px; */
+  }
+  .container {
+    width: 100%;
+    align-self: center !important;
+  }
 }
 
 .non-links {
-    color: black!important;
-    text-decoration: none!important;
+  color: black !important;
+  text-decoration: none !important;
 }
 @media (max-width: 960px) {
-    #none {
-        display: inline-block;
-        /* margin-top: 30px; */
-    }
-    .container{
-        width: 100%;
-        align-self: center !important;
-    }
+  #none {
+    display: inline-block;
+    /* margin-top: 30px; */
+  }
+  .container {
+    width: 100%;
+    align-self: center !important;
+  }
 }
 
 .non-links {
-    color: black!important;
-    text-decoration: none!important;
+  color: black !important;
+  text-decoration: none !important;
 }
-
-
-

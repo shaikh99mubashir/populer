@@ -132,7 +132,7 @@ export default function FlashSale({ flashMore, isFEmpty, isFLoad }) {
                   />
                   <div style={{ backgroundColor: '#FFA500', position: 'relative', bottom: '100px', left: '5px', border: "1px solid #FFA500", borderRadius: "50%", width: '35%' }}>
 
-                    <h6 style={{ fontWeight: "bold", fontSize: "12px", color: 'white', textAlign: 'center' }}>Sold</h6>
+                    <h6 style={{ fontWeight: "bold", fontSize: "12px", color: 'white', textAlign: 'center',fontFamily: "Gill Sans" }}>Sold</h6>
                   </div>
                   <CardContent>
                     <div className="artypo">

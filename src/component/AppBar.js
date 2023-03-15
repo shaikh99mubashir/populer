@@ -507,7 +507,7 @@ export default function MenuAppBar({ setItemSearch, cartCount }) {
                 onClick={() => history.push("/AddToCart")}
               >
                 <AddShoppingCartIcon />
-                <span style={{ fontSize: "16px", fontWeight: "bold" }}>{cartCount.length == 0 ? "" : cartCount.length}</span>
+                <span style={{ fontSize: "16px", fontWeight: "bold",fontFamily: "Gill Sans" }}>{cartCount.length == 0 ? "" : cartCount.length}</span>
               </IconButton>
               <IconButton
                 aria-label="add to shopping cart"
@@ -526,7 +526,7 @@ export default function MenuAppBar({ setItemSearch, cartCount }) {
             <StyledInputBase
               placeholder="Search in "
               inputProps={{ "aria-label": "search" }}
-              style={{ width: '100% !important', padding: '10x 10px !important', fontSize: '18px', margin: '2% 8%' }}
+              style={{ width: '100% !important', padding: '10x 10px !important', fontSize: '18px', margin: '2% 8%',fontFamily: "Gill Sans" }}
               onChange={(e) => setItemSearch(e.target.value)}
             />
             <IconButton onClick={() => history.push('/search')}

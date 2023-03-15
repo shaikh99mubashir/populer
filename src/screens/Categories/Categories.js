@@ -21,6 +21,7 @@ import { useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import ClipLoader from "react-spinners/ClipLoader";
+import { Box } from "@mui/system";
 // import Footer from '../../component/footer/Footer'
 
 export default function Categories() {
@@ -81,9 +82,9 @@ export default function Categories() {
           :
           (
             <>
-              <div style={{ marginTop: "201px" }}>
-                <h1 className="heading-f" >Categories</h1>
-                <Divider variant="middle" />
+              <div style={{ marginTop: "10px" }}>
+                <h1 className="heading-f" style={{ fontFamily: "Gill Sans" }} >Categories</h1>
+                {/* <Divider variant="middle" /> */}
                 <div className="container">
                   <div className="mainf-2">
                     {product
@@ -94,185 +95,70 @@ export default function Categories() {
                           }
                         }
                       })
-                      .map((data) => (
-                        // <div className="cardf">
-                        //   <div className="postf">
-                        //     <img  src={data.image} />
-                        //     <span className="textf">{data.name}</span>
-                        //     <span className="textf">{data.spec}</span>
-                        //     <span
-                        //       style={{ color: "red", fontWeight: "bold" }}
-                        //       className="textf"
-                        //     >
-                        //       RS.{data.rate}
-                        //     </span>
-                        //     <div className="discountf">
-                        //       {/* <span className="disratef">RS.{data.flashData.rate}</span> */}
-                        //       {/* <span className="disperf">-{data.discountPercenage}%</span> */}
-                        //     </div>
-                        //   </div>
-                        // </div>
-
-                        //........................................................................
-                        <Card
+                      .map((e) => (
+                        <Link to={`/ProductDetail/${e.name}`}
                           style={{
-                            margin: "1%",
-                            cursor: "pointer",
-                            // marginLeft: "2%",
-                            // height: '20em',
-                            // width: "30%"
-                          }}
-                          // lassName='Asilder'
-                          sx={{ maxWidth: 180 }}
-                          className="cardSli"
-                        // onClick={() => dataPass(data)}
-                        >
-                          {data.quantity == 0 ? (
-                            <>
-                              <Link
-                                to={`/ProductDetail/${data.name}`}
-                                style={{ textDecoration: "inherit", color: "inherit" }}
-                              >
-                                <CardMedia
-                                  component="img"
-                                  height="200"
-                                  width="150"
-                                  image={data.image}
-                                  alt="green iguana"
-                                  className="cardSli-M"
-                                />
-                                <div
-                                  style={{
-                                    backgroundColor: "#FFA500",
-                                    position: "relative",
-                                    bottom: "100px",
-                                    left: "5px",
-                                    border: "1px solid #FFA500",
-                                    borderRadius: "50%",
-                                    width: "35%",
-                                  }}
-                                >
-                                  <h6
-                                    style={{
-                                      fontWeight: "bold",
-                                      fontSize: "12px",
-                                      color: "white",
-                                      textAlign: "center",
-                                    }}
-                                  >
-                                    Sold
-                                  </h6>
-                                </div>
-                                <CardContent>
-                                  <div className="artypo">
-                                    {/* <Typography variant="body2" gutterBottom component="span"> */}
-                                    {data.name}
-                                    {/* </Typography> */}
-                                  </div>
-                                  {/* <div className="ari-spce-div">
+                            textDecoration: "none"
+                          }}>
+                          <Card sx={{ width: 340, height: 415 }}>
+                            <Box sx={{ float: 'right' }}>
+                              <Typography gutterBottom variant="h5" component="div" sx={{
+                                fontFamily: "Gill Sans",
+                                backgroundColor: 'red', color: 'white', margin: 0, padding: '2px 15px ',
+                                borderRadius: '0px 0px 0px 5px'
+                              }}>
+                                {e.quantity == 0 ? 'Sold' : 'Sale'}
 
+                              </Typography>
+                            </Box>
+                            <Box sx={{ textAlign: "-webkit-center" }}>
 
-<Typography variant="caption" color="text.secondary">
-{data.spec}
-</Typography>
-</div> */}
-                                  <div className="disdiv">
-                                    {/* <span className="spec-ari">{data.spec}</span> */}
-                                    {/* <span className="rates">Rs: {data.flashData.rate}</span> */}
-                                    <div className="discount-f">
-                                      <span
-                                        style={{ color: "red", fontWeight: "bold" }}
-                                        className="textf"
-                                      >
-                                        {" "}
-                                        {data.discountPrice ? (
-                                          <>Rs.{data.discountPrice}</>
+                              <CardMedia
+                                sx={{
+                                  height: 200,
+                                  width: 200, objectFit: 'contain',
+                                  alignItems: "center",
+                                  marginTop: 2,
+                                }}
+                                image={e.image}
+                                title="green iguana"
+                              />
+                            </Box>
+                            <CardContent>
+                              <Typography gutterBottom variant="h6" component="div" sx={{ fontFamily: "Gill Sans", textAlign: 'start' }}>
+                                {e.name.length > 25 ? <div>{e.name.slice(0, 60)}...</div> : e.name}
+                              </Typography>
+                              <Box sx={{ marginTop: 3 }}>
+                                <Typography gutterBottom component="div" sx={{ fontFamily: "Gill Sans", textAlign: 'start', fontSize: '1.5rem', margin: 0, color: 'red' }}>
+                                  {e.discountPrice ? (
+                                    <>Rs: {e.discountPrice}</>
+                                  ) : (
+                                    <>Rs: {e.rate}</>
+                                  )}
+                                </Typography>
+                                <Typography gutterBottom component="div" sx={{ fontFamily: "Gill Sans", textAlign: 'start', fontSize: '1.2rem', margin: 0, color: "rgb(12, 77, 162)" }}>
+                                  {e.discountPrice ? (
+                                    <div>
+                                      <span style={{ textDecoration: 'line-through', color: "rgb(12, 77, 162)" }}>
+                                        {e.discountPrice ? (
+                                          <>RS.{e.rate}</>
                                         ) : (
-                                          <>Rs.{data.rate}</>
+                                          <>RS.{e.discountPrice}</>
                                         )}
                                       </span>
-                                    </div>
-                                    {data.discountPrice ? (
-                                      <div className="discountf">
-                                        <span className="disratef">RS.{data.rate}</span>
-                                        <span className="disperf">
-                                          -{data.discountPercentage}%
-                                        </span>
-                                      </div>
-                                    ) : null}
-                                    {/* <div className="discountf">
-                    <span className="disratef">RS.{data.flashData.rate}</span>
-                    <span className="disperf">-{data.discountPercenage}%</span>
-                </div> */}
-                                  </div>
-                                </CardContent>
-                              </Link>
-                            </>
-                          ) : (
-                            <>
-                              <Link
-                                to={`/ProductDetail/${data.name}`}
-                                style={{ textDecoration: "inherit", color: "inherit" }}
-                              >
-                                <CardMedia
-                                  component="img"
-                                  height="200"
-                                  width="150"
-                                  image={data.image}
-                                  alt="green iguana"
-                                  className="cardSli-M"
-                                />
-                                <CardContent>
-                                  <div style={{ marginBottom: '40px' }}>
-                                    {/* <Typography variant="body2" gutterBottom component="span"> */}
-                                    {data.name}
-                                    {/* </Typography> */}
-                                  </div>
-                                  {/* <div className="ari-spce-div">
-
-
-<Typography variant="caption" color="text.secondary">
-{data.spec}
-</Typography>
-</div> */}
-                                  <div className="disdiv">
-                                    {/* <span className="spec-ari">{data.spec}</span> */}
-                                    {/* <span className="rates">Rs: {data.flashData.rate}</span> */}
-                                    <div className="discount-f">
-                                      <span
-                                        style={{ color: "red", fontWeight: "bold" }}
-                                        className="textf"
-                                      >
-                                        {" "}
-                                        {data.discountPrice ? (
-                                          <>Rs.{data.discountPrice}</>
-                                        ) : (
-                                          <>Rs.{data.rate}</>
-                                        )}
+                                      <span style={{ fontSize: 12, color: "rgb(12, 77, 162)", marginLeft: 5 }}>
+                                        -{e.discountPercentage}%
                                       </span>
                                     </div>
-                                    {data.discountPrice ? (
-                                      <div className="discountf">
-                                        <span className="disratef">RS.{data.rate}</span>
-                                        <span className="disperf">
-                                          -{data.discountPercentage}%
-                                        </span>
-                                      </div>
-                                    ) : null}
-                                    {/* <div className="discountf">
-<span className="disratef">RS.{data.flashData.rate}</span>
-<span className="disperf">-{data.discountPercenage}%</span>
-</div> */}
-                                  </div>
-                                </CardContent>
-                              </Link>
-                            </>
-                          )}
-                        </Card>
+                                  ) : null}
+                                </Typography>
+                              </Box>
+                            </CardContent>
+                          </Card>
+                        </Link>
                       ))}
                   </div>
                 </div>
-                {/* <Footer /> */}
               </div>
             </>
           )

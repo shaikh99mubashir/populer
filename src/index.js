@@ -16,45 +16,6 @@ import arrivalReducer from './Store/Reducers/arrivalReducer';
 import bestReducer from './Store/Reducers/bestReducer';
 import cartReducer from './Store/Reducers/cartReducer';
 
-var url = 'https://wati-integration-service.clare.ai/ShopifyWidget/shopifyWidget.js?62251';
-var s = document.createElement('script');
-s.type = 'text/javascript';
-s.async = true;
-s.src = url;
-var options = {
-  "enabled": true,
-  "chatButtonSetting": {
-    "backgroundColor": "#4dc247",
-    "ctaText": "",
-    "borderRadius": "25",
-    "marginLeft": "0",
-    "marginBottom": "50",
-    "marginRight": "50",
-    "position": "right"
-  },
-  "brandSetting": {
-    "brandName": "Popular Foods",
-    "brandSubTitle": "Typically replies within a day",
-    "brandImg": "https://popularfoods.pk/static/media/logo.215ce8a7d22b42b2fd7c.png",
-    "welcomeText": "Hi there!\nHow can I help you?",
-    "messageText": "Hello, I have a question about {{page_link}}",
-    "backgroundColor": "#0a5f54",
-    "ctaText": "Start Chat",
-    "borderRadius": "25",
-    "autoShow": false,
-    "phoneNumber": "923481732451"
-  }
-};
-// s.onload = function () {
-//   CreateWhatsappChatWidget(options);
-// };
-
-var x = document.getElementsByTagName('script')[0];
-x.parentNode.insertBefore(s, x);
-
-
-
-
 const store = configureStore({
   reducer: {
     user: userReducer,

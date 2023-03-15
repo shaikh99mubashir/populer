@@ -642,7 +642,6 @@ export const ProductDetail = ({ cartCount }) => {
                       md={3}
                       lg={4}
                     >
-
                       <div>
                         <Carousel
 
@@ -660,9 +659,11 @@ export const ProductDetail = ({ cartCount }) => {
                     <Grid
                       // className="Progrid-grid" 
                       item
-                      xs="auto"
-                      md={4}
+                      // xs="auto"
+                      md={6}
                       lg={4}
+                      xs={12}
+                      style={{ padding: "20px" }}
                     >
 
                       <div
@@ -817,7 +818,7 @@ export const ProductDetail = ({ cartCount }) => {
                             // </Stack>
                             <div style={{ backgroundColor: '#FFA500', border: "1px solid #FFA500", borderRadius: "50%", width: '25%' }}>
 
-                              <h6 style={{ fontWeight: "bold", fontSize: "12px", color: 'white' }}>Sold</h6>
+                              <h6 style={{ fontWeight: "bold", fontSize: "12px", color: 'white', fontFamily: "Gill Sans" }}>Sold</h6>
                             </div>
                             :
                             <Stack spacing={2} direction="row">

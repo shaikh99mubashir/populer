@@ -99,7 +99,7 @@ export default function NewArrival({ isEmptyA, isLoadA, fetchMoreA }) {
                 // onClick={() => dataPass(data)}
                 key={ind}
               >
-                {data.quantity == 0 ?
+                {data.quantity ?
                   <>
                     <Link to={`/ProductDetail/${data.product.name}`} style={{ textDecoration: 'inherit', color: 'inherit' }}>
                       {/* <CardActionArea> */}
@@ -112,16 +112,16 @@ export default function NewArrival({ isEmptyA, isLoadA, fetchMoreA }) {
                         className="cardSli-M"
                       />
                       {data.discountPrice?
-                            <div style={{color:'white', backgroundColor: '#fb550e',float:'right', width: '35%' }}>
+                            <div style={{color:'white', backgroundColor: '#fb550e',float:'right', width: '35%',fontFamily: "Gill Sans" }}>
                               {/* <h6 style={{ fontWeight: "bold", fontSize: "12px", color: 'white', textAlign: 'center' }}>Sale</h6> */}
-                              SALE
+                              {data.quantity == 0 ? 'SOLD' : 'SALE'}
                             </div>
                           :
                           null
 
                         }
-                      <div style={{ backgroundColor: '#FFA500', position: 'relative', bottom: '100px', left: '5px', border: "1px solid #FFA500", borderRadius: "50%", width: '35%' }}>
-                        <h6 style={{ fontWeight: "bold", fontSize: "12px", color: 'white', textAlign: 'center' }}>Sold</h6>
+                      <div style={{ backgroundColor: '#FFA500',fontFamily: "Gill Sans", position: 'relative', bottom: '100px', left: '5px', border: "1px solid #FFA500", borderRadius: "50%", width: '35%' }}>
+                        <h6 style={{ fontWeight: "bold", fontSize: "12px", color: 'white', textAlign: 'center',fontFamily: "Gill Sans" }}>Sold</h6>
                       </div>
                         <div className="artypo">
 
@@ -142,7 +142,7 @@ export default function NewArrival({ isEmptyA, isLoadA, fetchMoreA }) {
                           <div className="discount-f">
 
                             <span
-                              style={{ color: "red", fontWeight: "bold", fontSize:'18px' }}
+                              style={{ color: "red", fontWeight: "bold", fontSize:'18px',fontFamily: "Gill Sans" }}
                               className="textf"
                             >
                               {data.discountPrice ?
@@ -183,7 +183,7 @@ export default function NewArrival({ isEmptyA, isLoadA, fetchMoreA }) {
 
                   <>
                   {data.discountPrice?
-                            <div style={{color:'white', backgroundColor: '#fb550e',float:'right', width: '35%',textAlign:'center' }}>
+                            <div style={{color:'white', backgroundColor: '#fb550e',float:'right', width: '35%',textAlign:'center',fontFamily: "Gill Sans" }}>
                               {/* <h6 style={{ fontWeight: "bold", fontSize: "12px", color: 'white', textAlign: 'center' }}>Sale</h6> */}
                               SALE
                             </div>
@@ -221,7 +221,7 @@ export default function NewArrival({ isEmptyA, isLoadA, fetchMoreA }) {
                           <div className="discount-f">
 
                             <span
-                              style={{ color: "red", fontWeight: "bold" ,fontSize:'18px' }}
+                              style={{ color: "red", fontWeight: "bold" ,fontSize:'18px',fontFamily: "Gill Sans" }}
                               className="textf"
                             >
                               {data.discountPrice ?

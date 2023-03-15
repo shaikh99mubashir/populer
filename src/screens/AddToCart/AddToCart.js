@@ -454,7 +454,7 @@ export const AddToCart = ({ cartCount }) => {
 																	style={{
 																		fontWeight: "bold",
 																		fontSize: 14,
-																		margin: "10px 0px",
+																		margin: "10px 0px",fontFamily: "Gill Sans"
 																	}}
 																>
 																	{data.count}

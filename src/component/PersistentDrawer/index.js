@@ -91,7 +91,7 @@ export default function PersistentDrawerLeft() {
     };
 
     return (
-        <Box sx={{ display: 'flex', justifyContent: "center", alignItems: 'center', }}>
+        <Box sx={{ display: 'flex', justifyContent: "center", alignItems: 'center',fontFamily: "Gill Sans" }}>
             <CssBaseline />
             {/* <AppBar position='fixed' open={open} > */}
             {/* style={{ marginTop: 85, width: 1400, marginRight: { lg: 500, md: 200, xs: 'none' }, borderTopLeftRadius: 50, borderTopRightRadius: 50, }} */}
@@ -105,7 +105,7 @@ export default function PersistentDrawerLeft() {
                 >
                     <MenuIcon style={{ color: 'white' }} />
                 </IconButton>
-                <Typography variant="h6" noWrap component="div" style={{ color: 'white', }} >
+                <Typography variant="h6" noWrap component="div" style={{ color: 'white',fontFamily: "Gill Sans" }} >
                     SHOW BY CATEGORY
                 </Typography>
             </Toolbar>
@@ -114,6 +114,7 @@ export default function PersistentDrawerLeft() {
                 sx={{
                     width: 'auto',
                     flexShrink: 0,
+                    color:'black',
                     '& .MuiDrawer-paper': {
                         width: drawerWidth,
                         boxSizing: 'border-box',
@@ -135,7 +136,7 @@ export default function PersistentDrawerLeft() {
                     {categoryD.map((text, index) => (
                         <ListItem key={index} disablePadding>
                             <ListItemButton onClick={() => submit(text)}>
-                                <ListItemText primary={text.category} />
+                                <ListItemText primary={text.category} sx={{fontFamily: "Gill Sans"}} />
                             </ListItemButton>
                         </ListItem>
                     ))}
@@ -145,7 +146,7 @@ export default function PersistentDrawerLeft() {
                     {categoryD.map((text, index) => (
                         <ListItem key={index} disablePadding>
                             <ListItemButton onClick={() => submit(text)}>
-                                <ListItemText primary={text.category} />
+                                <ListItemText primary={text.category} sx={{fontFamily: "Gill Sans"}}/>
                             </ListItemButton>
                         </ListItem>
                     ))}

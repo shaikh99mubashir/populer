@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 // import './component/footer/footer.css'
 // import './component/flashsale/sale.css'
 // import './component/bestimesale/bestime.css'
@@ -68,6 +70,7 @@ import { cartData } from './Store/Reducers/cartReducer';
 import Contact from '../src/screens/Contact'
 import Blogs from '../src/screens/Blogs'
 import Aboutus from '../src/screens/Aboutus'
+import BlogsDetail from './screens/BlogsDetail';
 
 
 // import "~slick-carousel/slick/slick.css";
@@ -102,7 +105,7 @@ function App() {
     async function fetchFunc() {
       const collectionRef = collection(db, "product");
       const q = query(collectionRef,
-        where("quantity", ">", 0),
+        where("quantity", ">=", 0),
         // orderBy("quantity"),
         // orderBy('name', 'desc'),
         limit(5)
@@ -642,6 +645,7 @@ function App() {
                 <Route exact path='/ResetPassword' component={ResetPassword} />
                 <Route exact path='/Contact' component={Contact} />
                 <Route exact path='/Blogs' component={Blogs} />
+                <Route exact path='/BlogsDetail' component={BlogsDetail} />
                 <Route exact path='/Aboutus' component={Aboutus} />
                 <Route exact path='/PlaceOrder' component={Placeorder} />
                 <Route component={PageNotFound} />

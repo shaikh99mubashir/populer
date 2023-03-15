@@ -83,7 +83,7 @@ export const ShopByCategory = () => {
                             primaryTypographyProps={{
                                 width: "100%",
                                 lineHeight: "10px",
-                                fontSize: "12px"
+                                fontSize: "12px",fontFamily: "Gill Sans"
                             }}
                             primary={data.category}
                         />

@@ -58,7 +58,7 @@ function TabPanel(props) {
         >
             {value === index && (
                 <Box sx={{ p: 3 }}>
-                    <Typography>{children}</Typography>
+                    <Typography sx={{fontFamily: "Gill Sans"}}>{children}</Typography>
                 </Box>
             )}
         </div>
@@ -451,8 +451,8 @@ function CheckOut() {
                                                 <Divider />
                                                 <div>
                                                     <div className="rs">
-                                                        <h6 style={{fontSize: '1rem'}}>Total Amount</h6>
-                                                        <h6 style={{fontSize: '.9rem'}}>Rs : {location.state.total}</h6>
+                                                        <h6 style={{fontSize: '1rem',fontFamily: "Gill Sans"}}>Total Amount</h6>
+                                                        <h6 style={{fontSize: '.9rem',fontFamily: "Gill Sans"}}>Rs : {location.state.total}</h6>
                                                     </div>
                                                 </div>
                                                 <div className="countbtn-2">

@@ -466,11 +466,11 @@ export const FlashProductDetail = () => {
                                         // </Stack>
                                         <div style={{ backgroundColor: '#FFA500', border: "1px solid #FFA500", borderRadius: "50%", width: '25%' }}>
 
-                                            <h6 style={{ fontWeight: "bold", fontSize: "12px", color: 'white' }}>Sold</h6>
+                                            <h6 style={{ fontWeight: "bold", fontSize: "12px", color: 'white',fontFamily: "Gill Sans" }}>Sold</h6>
                                         </div>
                                         :
                                         <Stack spacing={2} direction="row">
-                                            <Button variant="contained" className="btnLog-2" onClick={() => AddToCart()}>
+                                            <Button variant="contained" className="btnLog-2" sx={{fontFamily: "Gill Sans"}} onClick={() => AddToCart()}>
                                                 Add To Cart
                                             </Button>
                                         </Stack>
@@ -481,7 +481,7 @@ export const FlashProductDetail = () => {
                       Open success snackbar
                     </Button> */}
                                     <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
-                                        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+                                        <Alert onClose={handleClose} severity="success" sx={{ width: '100%',fontFamily: "Gill Sans" }}>
                                             Item Added Successfully!
                                         </Alert>
                                     </Snackbar>

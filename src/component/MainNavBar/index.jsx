@@ -417,7 +417,7 @@ export default function MainNavBar({ setItemSearch, cartCount }) {
                                 onClick={() => history.push("/AddToCart")}
                             >
                                 <AddShoppingCartIcon />
-                                <span style={{ fontSize: "16px", fontWeight: "bold" }}>{cartCount.length === 0 ? "" : cartCount.length}</span>
+                                <span style={{ fontSize: "16px", fontWeight: "bold",fontFamily: "Gill Sans" }}>{cartCount.length === 0 ? "" : cartCount.length}</span>
                             </IconButton>
                             {/* <IconButton
                                 aria-label="add to shopping cart"

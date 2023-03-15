@@ -272,6 +272,7 @@ export default function BesTimeSale({ isCatLoad, isLoad }) {
                             width: "100%",
                             lineHeight: "18px",
                             fontSize: "14px !important"
+                            ,fontFamily: "Gill Sans"
 
                           }}
                           act

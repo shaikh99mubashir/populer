@@ -64,7 +64,7 @@ function TabPanel(props) {
     >
       {value === index && (
         <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
+          <Typography sx={{fontFamily: "Gill Sans"}}>{children}</Typography>
         </Box>
       )}
     </div>
@@ -366,7 +366,7 @@ export const Login = ({ userState }) => {
                       width: '100%',
                       flexDirection: 'column'
                     }}>
-                      <h1 style={{ fontSize: '2.3rem', marginBottom: '80px' }}>Login to Your Account</h1>
+                      <h1 style={{ fontSize: '2.3rem', marginBottom: '80px',fontFamily: "Gill Sans" }}>Login to Your Account</h1>
                       <Box
                         component="form"
                         sx={{

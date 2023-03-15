@@ -513,22 +513,22 @@ export const Placeorder = () => {
                 </div>
                 <div>
                   {cartD.cart.map((data) => (
-                    <div className="rs">
+                    <div >
                       <h6>
-                        <span style={{ fontSize: ".9rem" }}>Subtotal </span>
+                        <span style={{ fontSize: ".9rem", fontFamily: "Gill Sans" }}>Subtotal </span>
                         <span
-                          style={{ fontSize: ".9rem", fontWeight: "lighter" }}
+                          style={{ fontSize: ".9rem", fontWeight: "lighter", fontFamily: "Gill Sans" }}
                         >
                           {data.name}
                         </span>
                       </h6>
                       {/* <h5></h5> */}
                       {data.discountPrice ? (
-                        <h6 style={{ fontSize: ".9rem" }}>
+                        <h6 style={{ fontSize: ".9rem", fontFamily: "Gill Sans" }}>
                           Rs : {data.count * data.discountPrice}
                         </h6>
                       ) : (
-                        <h6 style={{ fontSize: ".9rem" }}>
+                        <h6 style={{ fontSize: ".9rem", fontFamily: "Gill Sans" }}>
                           Rs : {data.count * data.rate}
                         </h6>
                       )}
@@ -536,13 +536,13 @@ export const Placeorder = () => {
                     </div>
                   ))}
 
-                  {/* <div className="rs">
+                  {/* <div >
                     <h6 style={{ fontSize: ".9rem" }}>Shipping Fee</h6>
                     <h6 style={{ fontSize: ".9rem" }}>Rs : 200</h6>
                   </div> */}
 
-                  <div className="rs">
-                    <h6 style={{ fontSize: ".9rem" }}>CASH ON DELIEVERY</h6>
+                  <div >
+                    <h6 style={{ fontSize: ".9rem", fontFamily: "Gill Sans" }}>CASH ON DELIEVERY</h6>
                     <input
                       type="radio"
                       onClick={() => setpayment("cod")}
@@ -550,7 +550,7 @@ export const Placeorder = () => {
                     />
                   </div>
 
-                  {/* <div className="rs">
+                  {/* <div >
                               <h6>BANK TRANSFER</h6>
                               <input type="radio" onClick={()=>setpayment("bank")} checked={payment == "bank"}  />
                             </div>
@@ -605,9 +605,9 @@ export const Placeorder = () => {
                             </div> */}
 
                 <div>
-                  <div className="rs">
-                    <h6 style={{ fontSize: ".9rem" }}>Total</h6>
-                    <h6 style={{ fontSize: ".9rem" }}>Rs : {multi}</h6>
+                  <div >
+                    <h6 style={{ fontSize: ".9rem", fontFamily: "Gill Sans" }}>Total</h6>
+                    <h6 style={{ fontSize: ".9rem", fontFamily: "Gill Sans" }}>Rs : {multi}</h6>
                   </div>
                 </div>
                 {/* <div className="countbtn-2">

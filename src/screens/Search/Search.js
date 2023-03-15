@@ -22,6 +22,7 @@ import { useSelector } from "react-redux";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import CircularProgress from "@mui/material/CircularProgress";
+import { Box } from "@mui/system";
 
 export const Search = ({ itemSearch }) => {
   // console.log("irtm...>>>>>", itemSearch)
@@ -220,35 +221,11 @@ export const Search = ({ itemSearch }) => {
       {(product.length && itemSearch.length) > 0 ? (
         <div className="container-ff">
 
-          <div className="mainf-2" style={{ gap: 40 }}>
+          {/* <div className="mainf-2" style={{ gap: 40 }}>
             {product
-              // .slice(0, 20)
-              // .sort(() => 0.5 - Math.random())
-              // :
-              // productD
               .map(
                 (data) =>
-                  // <div className="cardf">
-                  //   <div className="postf">
-                  //     <img  src={data.image} />
-                  //     <span className="textf">{data.name}</span>
-                  //     <span className="textf">{data.spec}</span>
-                  //     <span
-                  //       style={{ color: "red", fontWeight: "bold" }}
-                  //       className="textf"
-                  //     >
-                  //       RS.{data.rate}
-                  //     </span>
-                  //     <div className="discountf">
-                  //       {/* <span className="disratef">RS.{data.flashData.rate}</span> */}
-                  //       {/* <span className="disperf">-{data.discountPercenage}%</span> */}
-                  //     </div>
-                  //   </div>
-                  // </div>
-
-                  //........................................................................
-
-                  data.quantity > 0 ? (
+                  data.quantity ? (
                     <div
                       style={{
                         minWidth: "calc(18% - 40px)",
@@ -262,16 +239,11 @@ export const Search = ({ itemSearch }) => {
                           cursor: "pointer",
                           backgroundColor: "whitesmoke",
                           fontFamily: "poppins",
-                          // paddingBottom : "20px"
-                          // marginLeft: "2%",
-                          // width: "auto"
                           width: 200,
 
 
                         }}
-                        // lassName='Asilder'
                         className="cardSli"
-                      // onClick={() => dataPass(data)}
                       >
                         <Link
                           to={`/ProductDetail/${data.name}`}
@@ -290,8 +262,7 @@ export const Search = ({ itemSearch }) => {
                                   width: "55%",
                                 }}
                               >
-                                {/* <h6 style={{ fontWeight: "bold", fontSize: "12px", color: 'white', textAlign: 'center' }}>Sale</h6> */}
-                                SALE
+                                {data.quantity == 0 ? 'SOLD' : 'SALE'}
                               </div>
                             ) : null}
                             <CardMedia
@@ -309,23 +280,15 @@ export const Search = ({ itemSearch }) => {
                             />
 
                             <div className="artypo">
-                              {/* <Typography variant="body2" gutterBottom component="span"> */}
                               {data.name}
-                              {/* </Typography> */}
+                              
                             </div>
-                            {/* <div className="ari-spce-div">
-
-
-<Typography variant="caption" color="text.secondary">
-{data.spec}
-</Typography>
-</div> */}
+                            
                             <div className="disdiv">
-                              {/* <span className="spec-ari">{data.spec}</span> */}
-                              {/* <span className="rates">Rs: {data.flashData.rate}</span> */}
+                             
                               <div className="discount-f">
                                 <span
-                                  style={{ color: "#FC1310", fontSize: 18 }}
+                                  style={{ color: "#FC1310", fontSize: 18, fontFamily: "Gill Sans" }}
                                   className="textf"
                                 >
                                   {data.discountPrice ? (
@@ -361,115 +324,87 @@ export const Search = ({ itemSearch }) => {
                                   </span>
                                 </div>
                               ) : null}
-                              {/* <div className="discountf">
-        <span className="disratef">RS.{data.flashData.rate}</span>
-        <span className="disperf">-{data.discountPercenage}%</span>
-      </div> */}
                             </div>
-                            {/* </CardActionArea> */}
                           </>
                         </Link>
                       </Card>
                     </div>
                   ) : null
-                //               <>
-                //                 <CardMedia
-                //                   component="img"
-                //                   height="200"
-                //                   width='150'
-                //                   image={data.image}
-                //                   alt="green iguana"
-                //                   className="cardSli-M"
-                //                 />
-                //                 <CardContent>
-                //                   <div className="artypo">
-
-                //                     <Typography variant="body2" gutterBottom component="span">
-                //                       {data.name}
-                //                     </Typography>
-                //                   </div>
-                //                   {/* <div className="ari-spce-div">
-
-                //   <Typography variant="caption" color="text.secondary">
-                //   {data.spec}
-                //   </Typography>
-                // </div> */}
-                //                   <div className="disdiv">
-
-                //                     {/* <span className="spec-ari">{data.spec}</span> */}
-                //                     {/* <span className="rates">Rs: {data.flashData.rate}</span> */}
-                //                     <div className="discount-f">
-
-                //                       <span
-                //                         style={{ color: "red", fontWeight: "bold" }}
-                //                         className="textf"
-                //                       >
-                //                         {data.discountPrice ?
-                //                           <>
-                //                             Rs: {data.discountPrice}
-                //                           </>
-                //                           :
-                //                           <>
-                //                             Rs: {data.rate}
-                //                           </>
-                //                         }
-                //                       </span>
-                //                     </div>
-                //                     {data.discountPrice ?
-                //                       <div className="discountf">
-                //                         <span className="disratef" >
-                //                           {data.discountPrice ? <>
-                //                             RS.{data.rate}
-                //                           </>
-                //                             :
-                //                             <>
-                //                               RS.{data.discountPrice}
-                //                             </>
-                //                           }
-                //                         </span>
-                //                         <span className="disperf" >-{data.discountPercentage}%</span>
-                //                       </div> : null
-                //                     }
-                //                     {/* <div className="discountf">
-                //                       <span className="disratef">RS.{data.flashData.rate}</span>
-                //                       <span className="disperf">-{data.discountPercenage}%</span>
-                //                     </div> */}
-                //                   </div>
-                //                 </CardContent>
-                //               </>
               )}
+          </div> */}
+          <div style={{ display: "flex", flexDirection: 'row', width: '100%', flexWrap: 'wrap', justifyContent: 'center', gap: 20 }}>
+
+
+            {product && product.map((e, i) => {
+              return (
+                <Link to={`/ProductDetail/${e.name}`}
+                  style={{
+                    textDecoration: "none"
+                  }}>
+                  <Card sx={{ width: 340, height: 415 }}>
+                    <Box sx={{ float: 'right' }}>
+                      <Typography gutterBottom variant="h5" component="div" sx={{
+                        fontFamily: "Gill Sans",
+                        backgroundColor: 'red', color: 'white', margin: 0, padding: '2px 15px ',
+                        borderRadius: '0px 0px 0px 5px'
+                      }}>
+                        {e.quantity == 0 ? 'Sold' : 'Sale'}
+
+                      </Typography>
+                    </Box>
+                    <Box sx={{ textAlign: "-webkit-center" }}>
+
+                      <CardMedia
+                        sx={{
+                          height: 200,
+                          width: 200, objectFit: 'contain',
+                          alignItems: "center",
+                          marginTop: 2,
+                        }}
+                        image={e.image}
+                        title="green iguana"
+                      />
+                    </Box>
+                    <CardContent>
+                      <Typography gutterBottom variant="h6" component="div" sx={{ fontFamily: "Gill Sans", textAlign: 'start' }}>
+                        {e.name.length > 25 ? <div>{e.name.slice(0, 60)}...</div> : e.name}
+                      </Typography>
+                      <Box sx={{ marginTop: 3 }}>
+                        <Typography gutterBottom component="div" sx={{ fontFamily: "Gill Sans", textAlign: 'start', fontSize: '1.5rem', margin: 0, color: 'red' }}>
+                          {e.discountPrice ? (
+                            <>Rs: {e.discountPrice}</>
+                          ) : (
+                            <>Rs: {e.rate}</>
+                          )}
+                        </Typography>
+                        <Typography gutterBottom component="div" sx={{ fontFamily: "Gill Sans", textAlign: 'start', fontSize: '1.2rem', margin: 0, color: "rgb(12, 77, 162)" }}>
+                          {e.discountPrice ? (
+                            <div>
+                              <span style={{ textDecoration: 'line-through', color: "rgb(12, 77, 162)" }}>
+                                {e.discountPrice ? (
+                                  <>RS.{e.rate}</>
+                                ) : (
+                                  <>RS.{e.discountPrice}</>
+                                )}
+                              </span>
+                              <span style={{ fontSize: 12, color: "rgb(12, 77, 162)", marginLeft: 5 }}>
+                                -{e.discountPercentage}%
+                              </span>
+                            </div>
+                          ) : null}
+                        </Typography>
+                      </Box>
+                    </CardContent>
+                  </Card>
+                </Link>
+              )
+            })}
           </div>
         </div>
       ) :
         (
           <h2 style={{ textAlign: 'center' }}>No Product Found!</h2>
         )}
-      {/* <div>
-                {isPLoad &&
-                    <div style={{ textAlign: 'center !important', marginLeft: '50%', marginTop: '3%' }}>
-
-                        <CircularProgress
-                            // style={{ margin: '3% 3%' }} 
-                            disableShrink />
-                    </div>
-                }
-                {!isEmpty && !isPLoad &&
-                    // <button onClick={fetchMore}>
-                    //   More
-                    // </button>
-                    <Stack
-                        // spacing={2}
-                        // direction="row"
-                        style={{ margin: '3% 5%' }}
-                    >
-                        <Button
-                            // variant="contained" 
-                            className="btnLog-2" onClick={fetchMore}>
-                            Load More
-                        </Button>
-                    </Stack>
-                }
-            </div> */}
     </>
   );
 

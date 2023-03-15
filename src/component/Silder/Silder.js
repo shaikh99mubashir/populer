@@ -25,7 +25,7 @@ import db from "../../database/firebase";
 import { height } from "@mui/system";
 import Flickity from "react-flickity-component";
 
-const Silder = ({children}) => {
+const Silder = ({ children }) => {
   const [firstLoad, setFirstLoad] = useState(true);
 
 
@@ -46,7 +46,7 @@ const Silder = ({children}) => {
   //     const q = query(
   //       collectionRef,
   //     );
-  
+
   //     const unsub = onSnapshot(q, (snapshot) => {
   //       let data = snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
   //       if(data.length>0){
@@ -68,19 +68,22 @@ const Silder = ({children}) => {
   }
 
   return (
-    <Flickity
-      className={`carousel `} // default ''
-      elementType={'div'} // default 'div'
-      options={flickityOptions} // takes flickity options {}
-      disableImagesLoaded={false} // default false
-      reloadOnUpdate={true}  // default false
-      static // default false
-      
-    >
-      {
-        children
-      }
-    </Flickity>
+    <div className="mainCarousel">
+
+      <Flickity
+        className={`carousel `} // default ''
+        elementType={'div'} // default 'div'
+        options={flickityOptions} // takes flickity options {}
+        disableImagesLoaded={false} // default false
+        reloadOnUpdate={true}  // default false
+        static // default false
+
+      >
+        {
+          children
+        }
+      </Flickity>
+    </div>
   )
 };
 
